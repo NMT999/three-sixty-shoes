@@ -3,6 +3,21 @@ import Header from './components/Header'
 import TextCarousel from './components/TextCarousel'
 import CircularText from './components/CircularText '
 import ShoeComp from './components/ShoeComp'
+import { proxy } from 'valtio'
+
+const state = proxy({
+    current: null,
+    items: {
+        laces: '#000',
+        mesh: '#fff',
+        caps: '#fff',
+        inner: '#fff',
+        sole: '#000',
+        stripes: '#000',
+        band: '#000',
+        patch: '#000',
+    }
+})
 
 function App() {
   return (
@@ -27,7 +42,7 @@ function App() {
         </div>
       </main>
 
-      <ShoeComp />
+      <ShoeComp state={state} />
     </div>
   )
 }
